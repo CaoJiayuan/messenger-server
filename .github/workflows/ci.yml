@@ -1,0 +1,30 @@
+name: CI
+on:
+  push:
+    branches:
+      - release/.*
+jobs:
+  Publish:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: ^1.15
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Install
+      run: go mod tidy
+    - name: Build
+      run: go build -o ./release/server
+    - uses: azure/docker-login@v1
+      with:
+        username: ${{ secrets.DOCKER_USER }}
+        password: ${{ secrets.DOCKER_PWD }}
+    - name: Docker
+      run: |
+        IMAGE_TAG=${GITHUB_REF#*/}
+        echo IMAGE_TAG
+#        docker build --tag cjy632258/go-messenger .
+#        docker push cjy632258/go-messenger:latest
