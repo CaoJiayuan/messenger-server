@@ -24,7 +24,8 @@ jobs:
         password: ${{ secrets.DOCKER_PWD }}
     - name: Publish
       run: |
+        cd release
         IMAGE_TAG=${GITHUB_REF##*/}
         echo $IMAGE_TAG
-        docker build --tag cjy632258/go-messenger .
+        docker build --tag cjy632258/go-messenger:latest --tag cjy632258/go-messenger:$IMAGE_TAG .
         docker push cjy632258/go-messenger:latest
