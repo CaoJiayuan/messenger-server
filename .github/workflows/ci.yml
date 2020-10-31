@@ -2,7 +2,7 @@ name: CI
 on:
   push:
     tags:
-      - release/.*
+      - release/**
 jobs:
   Publish:
     runs-on: ubuntu-latest
