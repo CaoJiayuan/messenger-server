@@ -29,3 +29,4 @@ jobs:
         echo $IMAGE_TAG
         docker build --tag cjy632258/go-messenger:latest --tag cjy632258/go-messenger:$IMAGE_TAG .
         docker push cjy632258/go-messenger:latest
+        docker push cjy632258/go-messenger:$IMAGE_TAG
