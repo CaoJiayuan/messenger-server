@@ -1,0 +1,9 @@
+*.exe
+tmp
+.vscode
+.idea
+.env
+.air.toml
+*.log
+build
+storage/sessions/*

@@ -1,0 +1,10 @@
+default: cache # session driver, supports: file, cache, env: SESSION_HANDLER
+cache_store: session
+cookie_name: enorith-session #env: COOKIE_NAME
+dir: sessions
+max_life_time: 3600 # in second
+domain: ''
+path: '/'
+secure: false
+http_only: true
+same_site: lax # supports: default, lax, strict, none

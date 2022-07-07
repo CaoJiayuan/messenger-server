@@ -1,0 +1,2 @@
+key: somerandomstring #env: AUTH_JWT_KEY
+ttl: 3600 #env: AUTH_JWT_TTL

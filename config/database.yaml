@@ -1,0 +1,9 @@
+default: mysql # env: DB_CONNECTION
+connections:
+  mysql:
+    driver: mysql
+    dsn: root:root@tcp(127.0.0.1:3306)/messenger #env: DB_DSN
+implicit_injection: true
+# migrate table
+migrate: true
+log_channel: database

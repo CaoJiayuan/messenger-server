@@ -1,0 +1,17 @@
+default: default # env: LOGGING_CHANNEL
+channels: 
+  default:
+    outputs:
+      - rotate:///runtime.log # schema supports: rotate, single, file, stdout, stderr
+      - stdout
+  single:
+    outputs:
+      - single:///runtime.log
+  http:
+    outputs:
+      - rotate:///http.log
+      - stdout
+    label: http
+  database:
+    outputs:
+      - rotate:///database.log
